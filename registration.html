@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="desg.css">
+</head>
+<body>
+    <script>
+        function checkalphaonly(){
+            if(!((event.which>=65 && event.which<=90 )|| (event.which>=97 && event.which<=122) || (event.which == 32)))
+              //if (!((event.which>=65 && event.which<=90 )|| (event.which >=97 && event.which <=122)))
+            {
+                alert("Name should not have numbers");
+                
+                return false;
+            }
+        }
+
+        function checknumonly(){
+            if(!(event.which>=48 && event.which<=57))
+            {
+                alert("Enter number only in contact field");
+            }
+        }
+
+        // function checkchoose(){
+        //     var x=document.getElementById("city").value;
+        //     var y=document.getElementById("dfield").value;
+        //     if (x =="choose" || y=="choose"){
+        //         alert("Choose the Appropriate Field");
+        //     }
+        // }
+
+        // function checkemail(){
+
+        //     var x = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; 
+        //     var z= document.getElementById("mail").value;
+        //     if (!(z.match(x))){
+        //         alert("Enter correct email");
+        //     }
+        // }
+
+        // function passwordcheck(){
+
+        //     var x=document.getElementById("password").value;
+        //     if (x.length<6){
+        //         alert("Password should be min 6 charachters");
+        //     }
+
+        // }
+
+
+        // function checkmobile(){
+        //       var x= document.getElementById("mobile").value;
+        //       if (x.length!=10){
+        //           alert("Enter correct mobile number");
+        //       }
+
+        // }
+
+
+
+
+        // function checknull(ele,message){
+        //     if (ele.value==null){
+        //         alert(message);
+        //         return false;
+        //     }
+
+        //     else{
+        //         return true;
+        //     }
+
+        // }
+
+        function checknull(ele,message){
+            if (ele=="")
+            {
+                alert(message);
+                return false;
+            }
+
+            else{
+                return true;
+            }
+
+        }
+
+        function checkemail(ele,message){
+
+            var x = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; 
+            if (!(ele.match(x))){
+                alert(message);
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+        function checklength(ele,leng,message){
+            if (ele.length<leng){
+                alert(message);
+                return false;
+            }
+            else{
+                return true;
+            }
+            
+        }    
+
+        function checkchoose(ele,message){
+            if (ele =="choose"){
+                alert(message);
+                return false;
+            }
+            else{
+                return true;
+            }
+
+        }
+        
+             function checkform(){
+              var name=document.getElementById("funame").value;
+              
+               var mail=document.getElementById("mail").value;
+               
+               var pass=document.getElementById("password").value;
+               
+              var mobile=document.getElementById("mobile").value;
+              
+              var city=document.getElementById("city").value;
+              
+              var dfield=document.getElementById("dfield").value;
+              
+
+                 if (checknull(name,"Name can't be empty")){
+                     if (checkemail(mail,"Enter correct email id")){
+                         if (checklength(pass,8,"Password should be min 8 charachters long")){
+                             if (checknull(mobile,"Mobile number  can't be empty")){
+                                 if (checkchoose(city,"Choose appropriate city")){
+                                     if (checkchoose(dfield,"Choose appropriate Filed")){
+
+                                        return true;
+
+                                     }
+                                 }
+                             }
+                         }
+                     }   
+
+                 }
+
+                 else{
+                     return false;
+                 }
+
+             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+        <div> 
+        <header>
+            <div class="start">
+                <div class="container">
+                <h1>Doc Easy</h1>
+                </div>
+            </div>
+        </header>
+    
+    </div>
+    <div>
+            
+        <nav class="navi">
+            <div class="container">
+    <ul>
+        <li><a class="navanchor" href="home.html">Home</a></li>
+        <li><a class="navanchor" href="registration.html">Registration</a></li>
+        <li><a class="navanchor" href="login.html">User Login</a></li>
+        <li><a class="navanchor" href="#">About Us</a></li>
+        <li><a class="navanchor" href="contactus.html">Contact Us</a></li>
+        
+        
+    </ul>
+</div>
+</nav>
+
+    <div class="rbox-3" id="rbox3">
+        <section class="rbox-3-1">
+        <input class="rinput" type="text" id="funame" placeholder="Enter Your Name" onkeypress="return checkalphaonly(event,'error')">
+        <input class="rinput" type="email" id="mail" placeholder="Enter Your Email">
+        <input class="rinput" type="password" id="password" placeholder="Enter Your Password">
+        <input class="rinput" type="number" id="mobile" placeholder="Enter Your Mobile" onkeypress="return checknumonly(event,'error')">
+        <select class="rinput" name="city" id="city">
+            <option value="choose">Choose City</option>
+            <option value="varanasi">Varanasi</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="delhi">Delhi</option>
+            <option value="chandigarh">Chandigarh</option>
+            <option value="pune">Pune</option>
+        </select>
+        <select class="rinput" name="field" id="dfield">
+            <option value="choose">Choose Field</option>
+            <option value="dermatology">Dermatology</option>
+            <option value="pediatrics">Pediatrics</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="overall">Overall Checkup</option>
+            <option value="orthopedics">Orthopedics</option>
+        </select>
+        <button class="rinput" value="Submit" onclick=" return checkform()">Register</button>
+    </section>
+
+    </div>
+    
+    <div class="allfooter">
+        <footer>
+            <h1>©Copyright Indian Penal Code</h1>
+        </footer>
+    </div>
+</body>
+</html>
