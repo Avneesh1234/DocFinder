@@ -9,8 +9,9 @@ body{
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 /*background-color: coral;
 */
-background-color:olive;
-
+background-color:rgb(110, 187, 100);
+background-color:#5CDB95;
+background-color: orange;
 }
 .start h1{
    padding-left:40px;
@@ -39,7 +40,9 @@ button.hsearch{
 .navi{
     
     background-color:rgba(0, 0, 0, 0.753);
-    
+    background-color: black;
+   /* background-color: coral;
+    */
 }
 .navi ul{
 padding-left: 40px;  
@@ -51,13 +54,20 @@ font-size: 30px;
 .navanchor{
     color:whitesmoke;
     text-decoration:none;
-    font-size: 14px;
-    padding-right:15px;
+    font-size: 14px ;
+    padding-right:15px ;
+    font-size: 0.5em;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    padding-left: 15px; 
 
 }
 .navi a:hover{
+    background-color: #ddd;;
     color:blueviolet;
 }
+
+
 .btn-blue {
     background-color: white;
     border-radius: 15px;
@@ -86,19 +96,21 @@ font-size: 30px;
   }
 #showcase{
     margin-top: 0%;
-    background-image:url(showcase.jpg);
+    background:url('abtimg/showcase.jpg') no-repeat center center fixed;
    background-size: cover;
    min-height:400px;
+   padding-bottom: 100px;
   
 }
 
 #showcase h1{
-    line-height: 1.6em;
+    line-height: 1.8em;
     font-size: 50px;
     color: yellow;
     color:rgba(245, 245, 245, 0.911);
     margin-right: 210px;
     padding-left: 20px;
+    
 }
 
 #search
@@ -133,7 +145,7 @@ font-size: 30px;
     margin-top: 0%;
     overflow: hidden;
 
-background-image: url(r.jpg);
+background-image: url('abtimg/r.jpg');
 background-size: cover;
    
 }
@@ -152,6 +164,7 @@ background-color: rgba(245, 245, 245, 0.425);
 font-family: Arial, Helvetica, sans-serif;
 font-style: bold;
 font-size: 1em;
+font-weight: bolder;
 }
 /*.rbox-3-1 button:hover{
 background-color: whitesmoke;
@@ -163,7 +176,7 @@ background-color: whitesmoke;
  margin-left: 180px;
  margin-right: 180px;
  padding-bottom: 25px;
- background-image: url(r1.jpg);
+ background-image: url('abtimg/r1.jpg');
  background-size: cover;
 margin-bottom: 40px;
 }
@@ -184,8 +197,11 @@ margin-bottom: 40px;
     line-height: 2.2em;
    font-size: 2em;
    box-sizing: content-box;
-   background-image: url(contactusleft.jpg) ;
+   background: url('abtimg/contactusleft.jpg')  no-repeat center center fixed; 
    background-size:cover;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
    height: 100%;
   margin-bottom: auto;
 }
@@ -200,8 +216,11 @@ width: 60%;
 float: right;
 background-color: rgb(70, 10, 35);
 display: inline;
-background-image: url(q3.jpg);
+background: url('abtimg/q3.jpg') no-repeat center center fixed;
 background-size:cover ;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
 box-sizing:content-box;
 height: 100%;
 margin-bottom:auto;
@@ -292,10 +311,51 @@ margin-bottom:auto;
 }
 
 
-#loginregbu{
 
-
-}
 #loginbu{
     margin-bottom: 20px;
 }
+
+.yvideo
+{
+
+
+overflow: hidden;
+width: 100%;
+margin-top: 40px;
+padding-bottom: 80px;
+
+}
+
+#aboutbody{
+    background: url('abtimg/about1.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    
+}
+
+#abvideo{
+float: right;
+margin-right: 50px;
+margin-top: 60px;
+display: inline;
+}
+
+#abh{
+    margin-top: 100px;
+display: inline;
+float: left;
+width: 55%;
+margin-top: 80px;
+color: yellow;
+font-size: 2.2em;
+margin-left: 50px;
+line-height: 1.6em;
+}
+.gallery{
+overflow: hidden;
+width: 100%;
+}
+

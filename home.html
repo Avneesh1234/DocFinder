@@ -41,11 +41,11 @@
                 <div class="container">
         <ul>
             <li><a class="navanchor" href="home.html">Home</a></li>
-        <li><a class="navanchor" href="registration.html">Registration</a></li>
-        <li><a class="navanchor" href="login.html">User Login</a></li>
-        <li><a class="navanchor" href="#">About Us</a></li>
-        <li><a class="navanchor" href="contactus.html">Contact Us</a></li>
-        <li><a class="navanchor" href="complex-search.html">Complex Search</a></li>
+            <li><a class="navanchor" href="registration.html">Registration</a></li>
+            <li><a class="navanchor" href="login.html">User Login</a></li>
+            <li><a class="navanchor" href="complex-search.html">Complex Search</a></li>
+            <li><a class="navanchor" href="aboutus.html">About Us</a></li>
+            <li><a class="navanchor" href="contactus.html">Contact Us</a></li>
         </ul>
     </div>
     </nav>
@@ -81,7 +81,7 @@
         <label for="fees"></label>
         <input class="hsearch" type="number" name="fees" id="field3" placeholder="Enter Your Fees">
         <a class="btn-blue" href="#" onclick="redirect()">Search</a>
-        <button style="display: block; margin-bottom: 50px; margin-left: 20px; height: 30px; background-color:black; color: cornsilk;" onclick="getloc()">Track Location</button>
+        <button style="display: block; margin-bottom: 50px; margin-left: 20px; height: 30px; background-color:black; color: cornsilk; font-weight: bolder;" onclick="getloc()">Track Location</button>
         <p id="mapop" style="color: black;">
             </p>
         <!--<button class="hsearch" name="search" onclick="registration.html"> Search</button>-->
@@ -89,7 +89,7 @@
 
     <div class="allfooter">
         <footer>
-            <h1>©Copyright Indian Penal Code</h1>
+            <h1>©Copyright Doc Easy Pvt Limited</h1>
         </footer>
     </div>
     <script>
@@ -117,6 +117,7 @@
             success:function(data){
                 console.log(data);
              var city=data.results[0].components.city;
+             alert("City="+data.results[0].components.city+"   State="+data.results[0].components.state+"   Country="+data.results[0].components.country);
              var inse=document.getElementById("field2");
              inse.value=city;
 

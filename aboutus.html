@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="bootstrap-5.0.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="desg.css">
+</head>
+<body id="aboutbody" style="margin: 0;">
+    <header>
+        <div class="start">
+            <div class="container" style="margin: 0;">
+            <h1 style="font-weight: bolder; padding-left: 0; margin-left:20px;">Doc Easy</h1>
+            </div>
+        </div>
+    </header>
+
+    
+        
+            <nav class="navi" style="padding-left: 0; ">
+                <div class="container" style="padding-bottom: 0px; margin-left: 20px;">
+        <ul style="padding-left: 0;">
+            <li><a class="navanchor" href="home.html">Home</a></li>
+            <li><a class="navanchor" href="registration.html">Registration</a></li>
+            <li><a class="navanchor" href="login.html">User Login</a></li>
+            <li><a class="navanchor" href="complex-search.html">Complex Search</a></li>
+            <li><a class="navanchor" href="aboutus.html">About Us</a></li>
+            <li><a class="navanchor" href="contactus.html">Contact Us</a></li>
+        </ul>
+    </div>
+    </nav>
+
+    <div class="yvideo">
+        <h1 id="abh" style="font-weight: bold;">We are one of the top emerging online doctor navigation Portal and we always try our best to resolve your problems</h1>
+        <iframe id="abvideo" width="400" height="280" src="https://www.youtube.com/embed/9DYaBzFPbcs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </div>
+
+
+       <div class="gallery" style="padding-bottom: 60px;">
+         <h1 style="text-align: center; font-size: 2.6em;color: rgba(0, 0, 0, 0.753);font-weight: bold; margin-bottom: 30px; background-color: whitesmoke; padding: 5px;">Our Gallery</h1>
+        
+         <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+              <img
+                src="abtimg/p4.jpg"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt=""
+              />
+          
+              <img
+                src="abtimg/p6.jpg"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="" />
+            </div>
+          
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <img
+                src="abtimg/p11.jpg"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt=""
+              />
+          
+              <img
+                src="abtimg/p8.jpg"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt=""
+                height="345px"
+              />
+            </div>
+          
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <img
+                src="abtimg/p5.jpg"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt=""
+              />
+          
+              <img
+                src="abtimg/p2.jpg"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt=""
+              />
+            </div>
+          </div> 
+          <hr style="height: 5px; color:black; background-color: black;"></hr>
+
+
+        </div>
+
+        
+
+        <div id="mapside" style="margin-top: 60px;" >
+
+            <h1 style="text-align: center; background-color: whitesmoke; padding:5px; color: black; margin-bottom: 30px;"><b>OUR LOCATION</b></h1>
+            <h1 id="abh" style="font-weight: bold; display:inline; float:left ; width: 40%; line-height: 1.8em; background-color: blueviolet; ">You can track us anywhere in Google Maps</h1>
+
+
+            
+
+
+            <div id="gmapsav" style="height: 400px;  width: 600px; float: right; margin-right: 50px; margin-bottom: 50px; display:inline;">
+            
+            
+            
+            </div>
+
+
+        </div>
+        <script>
+            function initMap(){
+                var options={
+                    zoom:8,
+                    center:{
+                        lat:25.2838,
+                        lng: -83.1156
+                    } 
+                }
+                var map=new google.maps.Map(document.getElementById('gmapsav'),options);
+            }
+        </script>
+
+
+        <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2XBaFjjIaniUvfYYkTg_FEVd_rlRB8xY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <div class="allfooter">
+        <footer>
+            <h1 style="font-weight: bolder;">©Copyright Doc Easy Pvt Limited</h1>
+        </footer>
+    </div>
+</body>
+</html>

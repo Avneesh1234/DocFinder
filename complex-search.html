@@ -28,14 +28,14 @@
         .todoinput{
             display: inline;
             width:15%;
-            height: 30px;
+            height: 35px;
             margin-bottom:20px;
             margin-left: 30px;
             
 
         }
         .dynamic{
-            background-color: rgba(207, 212, 124, 0.336);
+            background-color: rgba(94, 43, 47, 0.712);
           padding: 20px;
           margin-bottom: 20px;
         }
@@ -50,7 +50,10 @@
             margin-left: 80px;
             width: 90px;
             height: 30px;
-            background-color: snow;
+            color: whitesmoke;
+            font-size: 0.8em;
+            font-weight: bold;
+            background-color: black;
         }
         .res{
             background-color: rgba(109, 96, 138, 0.959);
@@ -69,18 +72,19 @@
 
 
 </head>
-<body style="margin: 0; overflow-y:scroll; background-color: lightgray; width: 100% ; background-image: url(centeraq.jpg); background-size: cover ;">
-    <div style="background-color: olive; width: 100%; overflow: hidden;">
-        <h1 style="margin-left: 20px;">Doc Finder</h1>
+<body style="margin: 0; overflow-y:scroll; background-color: lightgray; width: 100% ; background: url('abtimg/centercomplex.jpg') no-repeat center center fixed; background-size: cover ;">
+    <div style="background-color: orange; width: 100%; overflow: hidden;">
+        <h1 style="margin-left: 40px;">Doc Easy</h1>
   </div>
   <nav class="navi">
     <div class="container">
 <ul>
-<li><a class="navanchor" href="home.html">Home</a></li>
-<li><a class="navanchor" href="registration.html">Registration</a></li>
-<li><a class="navanchor" href="login.html">User Login</a></li>
-<li><a class="navanchor" href="#">About Us</a></li>
-<li><a class="navanchor" href="contactus.html">Contact Us</a></li>
+    <li><a class="navanchor" href="home.html">Home</a></li>
+    <li><a class="navanchor" href="registration.html">Registration</a></li>
+    <li><a class="navanchor" href="login.html">User Login</a></li>
+    <li><a class="navanchor" href="complex-search.html">Complex Search</a></li>
+    <li><a class="navanchor" href="aboutus.html">About Us</a></li>
+    <li><a class="navanchor" href="contactus.html">Contact Us</a></li>
 
 
 </ul>
@@ -90,7 +94,7 @@
   <div class="todo">
      
     <div class="inputs">
-        <h1 style="text-decoration: solid; text-align: center; font-size: 1.9em; ">Complex Search</h1>
+        <h1 style="text-decoration: solid; text-align: center; font-size: 1.9em; color: whitesmoke ;  ">Complex Search</h1>
 
         <select class="todoinput" name="" id="city">
             <option value="choose">Choose city</option>
@@ -121,11 +125,11 @@
 
   </div>
 <h3>Your Logs</h3>
-  <div id="dyna" class="dynamic" style="overflow-y:scroll;" >
+  <div id="dyna" class="dynamic"  >
 
   </div>
 <h3>Result</h3>    
-<div id="result" class="res" style="overflow-y:scroll;" >
+<div id="result" class="res"  >
     
 </div>
 
@@ -198,7 +202,7 @@ console.log(dlist[0].docid);
     bu.textContent="Search";
    // bu.onclick="deal()";
   //  bu.onclick=deal();
-   p.innerHTML=`<b>gid</b>=${gid}      <b>city</b>  =${city}        <b>field</b>   =${field}        <b>fee</b>  =${fee}`;
+   p.innerHTML=`<big><b>Gid</b></big>=${gid}      <big><b>City</b></big>  =${city}        <big><b>Field</b></big>   =${field}        <big><bFee</b></big>  =${fee}`;
     p.classList.add("real");
     p.appendChild(bu);
     document.getElementById("dyna").appendChild(p);
@@ -230,7 +234,7 @@ var k;
         var qw=document.createElement('p');
         qw.classList.add("rest");
       //  alert(`DocId  =${dlist[selects[k]].docid}      Name  =${dlist[selects[k]].name}       Field  =${dlist[selects[k]].field}         City   =${dlist[selects[k]].city}      Fee    =${dlist[selects[k]].fee}`);
-        qw.innerHTML=`<b>DocId</b>  =${dlist[selects[k]].docid}      <b>Name</b>  =${dlist[selects[k]].name}       <b>Field</b>  =${dlist[selects[k]].field}     <b>City</b>   =${dlist[selects[k]].city}        <b>Fee</b>    =${dlist[selects[k]].fee}`;
+        qw.innerHTML=`<big><b>DocId</b></big>  =${dlist[selects[k]].docid}     <big><b>Name</b></big>  =${dlist[selects[k]].name}       <big><b>Field</b></big>  =${dlist[selects[k]].field}     <big><b>City</b></big>   =${dlist[selects[k]].city}        <big><b>Fee</b></big>    =${dlist[selects[k]].fee}`;
         document.getElementById('result').appendChild(qw);
       
 
@@ -279,7 +283,7 @@ var k;
         var qw=document.createElement('p');
         qw.classList.add("rest");
       //  alert(`DocId  =${dlist[selects[k]].docid}      Name  =${dlist[selects[k]].name}       Field  =${dlist[selects[k]].field}         City   =${dlist[selects[k]].city}      Fee    =${dlist[selects[k]].fee}`);
-        qw.innerHTML=`<b>DocId</b>  =${dlist[selects[k]].docid}      <b>Name</b>  =${dlist[selects[k]].name}       <b>Field</b>  =${dlist[selects[k]].field}     <b>City</b>   =${dlist[selects[k]].city}        <b>Fee</b>    =${dlist[selects[k]].fee}`;
+        qw.innerHTML=`<big><b>DocId</b></big>  =${dlist[selects[k]].docid}     <big><b>Name</b></big>  =${dlist[selects[k]].name}       <big><b>Field</b></big>  =${dlist[selects[k]].field}     <big><b>City</b></big>   =${dlist[selects[k]].city}        <big><b>Fee</b></big>    =${dlist[selects[k]].fee}`;
         document.getElementById('result').appendChild(qw);
       
 

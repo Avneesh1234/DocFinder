@@ -131,6 +131,7 @@
                var pass=document.getElementById("password").value;
                
               var mobile=document.getElementById("mobile").value;
+              mobile=parseInt(mobile);
               
               var city=document.getElementById("city").value;
               
@@ -195,9 +196,9 @@
         <li><a class="navanchor" href="home.html">Home</a></li>
         <li><a class="navanchor" href="registration.html">Registration</a></li>
         <li><a class="navanchor" href="login.html">User Login</a></li>
-        <li><a class="navanchor" href="#">About Us</a></li>
-        <li><a class="navanchor" href="contactus.html">Contact Us</a></li>
         <li><a class="navanchor" href="complex-search.html">Complex Search</a></li>
+        <li><a class="navanchor" href="aboutus.html">About Us</a></li>
+        <li><a class="navanchor" href="contactus.html">Contact Us</a></li>
         
         
     </ul>
@@ -209,7 +210,7 @@
         <input class="rinput" type="text" id="funame" placeholder="Enter Your Name" onkeypress="return checkalphaonly(event,'error')">
         <input class="rinput" type="email" id="mail" placeholder="Enter Your Email">
         <input class="rinput" type="password" id="password" placeholder="Enter Your Password">
-        <input class="rinput" type="number" id="mobile" placeholder="Enter Your Mobile" onkeypress="return checknumonly(event,'error')">
+        <input class="rinput" type="text" id="mobile" placeholder="Enter Your Mobile" onkeypress="return checknumonly(event,'error')">
         <select class="rinput" name="city" id="city">
             <option value="choose">Choose City</option>
             <option value="varanasi">Varanasi</option>
@@ -233,7 +234,7 @@
     
     <div class="allfooter">
         <footer>
-            <h1>©Copyright Indian Penal Code</h1>
+            <h1>©Copyright Doc Easy Private Limited</h1>
         </footer>
     </div>
 </body>
