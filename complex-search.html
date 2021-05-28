@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="desg.css">
+    <style>
+        body{
+        margin: 0;
+        width: 100%;
+        background-image: url("centeraq.jpg");
+        background-size: cover;    
+        }
+        .todo{
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .inputs{
+          /*  margin: 3000px;
+            */overflow: hidden;
+           
+           margin-top: 20px;
+           margin-left: 150px;
+        }
+        .todoinput{
+            display: inline;
+            width:15%;
+            height: 30px;
+            margin-bottom:20px;
+            margin-left: 30px;
+            
+
+        }
+        .dynamic{
+            background-color: rgba(207, 212, 124, 0.336);
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+
+        .real{
+            background-color: lightgoldenrodyellow;
+            color: black;
+            border: lightgreen 2px dotted;
+            border-radius: 10px;
+        }
+        .dyb{
+            margin-left: 80px;
+            width: 90px;
+            height: 30px;
+            background-color: snow;
+        }
+        .res{
+            background-color: rgba(109, 96, 138, 0.959);
+          padding: 20px;
+        }
+        .rest{
+            background-color: rgb(181, 228, 94);
+            color: black;
+            border: rgb(159, 67, 182) 2px dotted;
+            border-radius: 10px;
+        }
+    </style>
+
+
+
+
+
+</head>
+<body style="margin: 0; overflow-y:scroll; background-color: lightgray; width: 100% ; background-image: url(centeraq.jpg); background-size: cover ;">
+    <div style="background-color: olive; width: 100%; overflow: hidden;">
+        <h1 style="margin-left: 20px;">Doc Finder</h1>
+  </div>
+  <nav class="navi">
+    <div class="container">
+<ul>
+<li><a class="navanchor" href="home.html">Home</a></li>
+<li><a class="navanchor" href="registration.html">Registration</a></li>
+<li><a class="navanchor" href="login.html">User Login</a></li>
+<li><a class="navanchor" href="#">About Us</a></li>
+<li><a class="navanchor" href="contactus.html">Contact Us</a></li>
+
+
+</ul>
+</div>
+</nav>
+
+  <div class="todo">
+     
+    <div class="inputs">
+        <h1 style="text-decoration: solid; text-align: center; font-size: 1.9em; ">Complex Search</h1>
+
+        <select class="todoinput" name="" id="city">
+            <option value="choose">Choose city</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="pune">Pune</option>
+            <option value="chennai">Chennai</option>
+            <option value="varanasi">Varanasi</option>
+            <option value="kanpur">Kanpur</option>
+        </select>
+
+        <select class="todoinput" name="" id="field">
+            <option value="choose">Choose Field</option>
+            <option value="dental">Dental</option>
+            <option value="general">General</option>
+            <option value="orthopedics">Orthopedics</option>
+            <option value="onchrology">Onchrology</option>
+            <option value="dermatology">Dermatology</option>
+            <option value="pediatrics">Pediatrics</option>
+        </select>
+        
+
+        <input class="todoinput" type="number" id="fees" placeholder="Enter Fee">
+        
+        <button class="todoinput" onclick="todo()">Add</button>
+        <button class="todoinput" onclick="clearDoc()">Remove Doctors</button>
+
+    </div>
+
+  </div>
+<h3>Your Logs</h3>
+  <div id="dyna" class="dynamic" style="overflow-y:scroll;" >
+
+  </div>
+<h3>Result</h3>    
+<div id="result" class="res" style="overflow-y:scroll;" >
+    
+</div>
+
+  <script>
+    dlist=[
+{docid:11, name:"AK Tiwari", city:"mumbai", field:"dental",fee:1000},
+{docid:41, name:"Farhan Sheikh", city:"mumbai", field:"dental",fee:2200},
+{docid:12, name:"R Yadav", city:"mumbai", field:"general",fee:2000},
+{docid:13, name:"AK Tiwari", city:"mumbai", field:"orthopedics",fee:1500},
+{docid:14, name:"VN Shah", city:"mumbai", field:"onchrology",fee:2500},
+{docid:15, name:"Rajkumar Rai", city:"mumbai", field:"dematology",fee:800},
+{docid:16, name:"J dubey", city:"mumbai", field:"pediatrics",fee:1900},
+
+{docid:17, name:"John Tiwari", city:"pune", field:"dental",fee:1000},
+{docid:18, name:"P Yadav", city:"pune", field:"general",fee:1200},
+{docid:19, name:"AK Mittal", city:"pune", field:"orthopedics",fee:2200},
+{docid:20, name:"Birendra Shah", city:"pune", field:"onchrology",fee:1000},
+{docid:21, name:"Lakshmi Rai", city:"pune", field:"dematology",fee:2000},
+{docid:22, name:"J Malhotra", city:"pune", field:"pediatrics",fee:2200},
+
+{docid:23, name:"Derek Tiwari", city:"chennai", field:"dental",fee:2500},
+{docid:24, name:"P Singh", city:"chennai", field:"general",fee:1600},
+{docid:25, name:"Monk Mittal", city:"chennai", field:"orthopedics",fee:1900},
+{docid:26, name:"VD Shah", city:"chennai", field:"onchrology",fee:2000},
+{docid:27, name:"Lakshmi Das", city:"chennai", field:"dematology",fee:2300},
+{docid:28, name:"CV Malhotra", city:"chennai", field:"pediatrics",fee:2800},
+
+{docid:29, name:"Harry Jadhav", city:"varanasi", field:"dental",fee:1200},
+{docid:30, name:"K Singhal", city:"varanasi", field:"general",fee:1800},
+{docid:31, name:"Monkey Mishra", city:"varanasi", field:"orthopedics",fee:2000},
+{docid:32, name:"C Lal", city:"varanasi", field:"onchrology",fee:2200},
+{docid:33, name:"Babu Das", city:"varanasi", field:"dematology",fee:1900},
+{docid:34, name:"AK Jotra", city:"varanasi", field:"pediatrics",fee:2000},
+
+
+{docid:35, name:"Sandy Samson", city:"kanpur", field:"dental",fee:1700},
+{docid:36, name:"Liitle Singham", city:"kanpur", field:"general",fee:1800},
+{docid:37, name:"James Johnson", city:"kanpur", field:"orthopedics",fee:2200},
+{docid:38, name:"Vk Tiwary", city:"kanpur", field:"onchrology",fee:2400},
+{docid:39, name:"Babu Lal", city:"kanpur", field:"dematology",fee:2800},
+{docid:40, name:"CV Raman", city:"kanpur", field:"pediatrics",fee:1900},
+
+
+]  ;
+console.log(dlist[0].docid);
+    list=[];
+    gid=100;
+
+    var t1=document.getElementById("dyna");
+    t1.addEventListener("click",search); 
+    function todo()
+    {
+    var city=document.getElementById("city").value;
+    var field=document.getElementById("field").value;
+    var fee=document.getElementById("fees").value;
+    searchit(city,field,fee);
+    var object= new Object();
+    gid=gid+1;
+    object.id=gid;
+    object.city=city;
+    object.field=field;
+    object.fee=fee;
+    list.push(object);
+
+    var p=document.createElement('p');
+    var bu=document.createElement('button');
+    bu.id=gid;
+    bu.classList.add("dyb");
+    bu.value="Search";
+    bu.textContent="Search";
+   // bu.onclick="deal()";
+  //  bu.onclick=deal();
+   p.innerHTML=`<b>gid</b>=${gid}      <b>city</b>  =${city}        <b>field</b>   =${field}        <b>fee</b>  =${fee}`;
+    p.classList.add("real");
+    p.appendChild(bu);
+    document.getElementById("dyna").appendChild(p);
+
+    }
+
+    function showall(){
+for(let i=0;i<list.length;i++){
+    alert(list[i].id);
+    alert(list[i].field);
+    alert(list[i].city);
+}
+    }
+console.log(24);
+
+function searchit(city,field,fee){
+    clearDoc();
+    selects=[];
+    for(c=0;c<dlist.length;c++){
+
+if (city==dlist[c].city && field==dlist[c].field && fee>=dlist[c].fee)
+{
+    selects.push(c);
+
+} 
+}
+var k;
+    for(k=0;k<selects.length;k++){
+        var qw=document.createElement('p');
+        qw.classList.add("rest");
+      //  alert(`DocId  =${dlist[selects[k]].docid}      Name  =${dlist[selects[k]].name}       Field  =${dlist[selects[k]].field}         City   =${dlist[selects[k]].city}      Fee    =${dlist[selects[k]].fee}`);
+        qw.innerHTML=`<b>DocId</b>  =${dlist[selects[k]].docid}      <b>Name</b>  =${dlist[selects[k]].name}       <b>Field</b>  =${dlist[selects[k]].field}     <b>City</b>   =${dlist[selects[k]].city}        <b>Fee</b>    =${dlist[selects[k]].fee}`;
+        document.getElementById('result').appendChild(qw);
+      
+
+    }
+
+    if (selects.length==0){
+        var qw=document.createElement('p');
+        qw.classList.add("rest");
+        qw.innerHTML="No Doctors Found";
+        document.getElementById('result').appendChild(qw);
+    }
+
+}
+
+
+function search(e)
+{
+    clearDoc();
+   // clearDoc();
+    selects=[];
+if(e.target.classList.contains("dyb")){
+    //alert("progress");
+    var i;
+    var id=e.target.id;
+    id=parseInt(id);
+    for ( i=0;i<list.length;i++){
+         if(list[i].id==id){
+            //alert(i);
+             break;
+             
+         }
+    }
+var c;
+
+    for(c=0;c<dlist.length;c++){
+
+       if (list[i].city==dlist[c].city && list[i].field==dlist[c].field && list[i].fee>=dlist[c].fee)
+       {
+           selects.push(c);
+
+       } 
+    }
+
+var k;
+    for(k=0;k<selects.length;k++){
+        var qw=document.createElement('p');
+        qw.classList.add("rest");
+      //  alert(`DocId  =${dlist[selects[k]].docid}      Name  =${dlist[selects[k]].name}       Field  =${dlist[selects[k]].field}         City   =${dlist[selects[k]].city}      Fee    =${dlist[selects[k]].fee}`);
+        qw.innerHTML=`<b>DocId</b>  =${dlist[selects[k]].docid}      <b>Name</b>  =${dlist[selects[k]].name}       <b>Field</b>  =${dlist[selects[k]].field}     <b>City</b>   =${dlist[selects[k]].city}        <b>Fee</b>    =${dlist[selects[k]].fee}`;
+        document.getElementById('result').appendChild(qw);
+      
+
+    }
+
+    if (selects.length==0){
+        var qw=document.createElement('p');
+        qw.classList.add("rest");
+        qw.innerHTML="No Doctors Found";
+        document.getElementById('result').appendChild(qw);
+    }
+
+    
+    
+    //alert(id);
+}
+
+// console.log(1);
+// alert("got it");
+
+}
+    function clearDoc(){
+        //alert("In");
+        var a=document.getElementById("result");
+    //     if(a.children){
+    //     while(a.children){
+    //     a.removeChild(a.children[0]);
+    // }}}
+    a.innerHTML='';
+    }
+</script>
+</body>
+</html>

@@ -8,6 +8,25 @@
   <link rel="stylesheet" type="text/css" href="desg.css">
 </head>
 <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        function redirect(){
+            
+        var city=document.getElementById("field2").value;
+        var field=document.getElementById("field1").value;
+        var fee=document.getElementById("field3").value; 
+        localStorage.setItem("city",city);
+        localStorage.setItem("field",field);
+        localStorage.setItem("fee",fee);
+        window.location.replace("homesearch.html");
+
+
+        }
+    </script>
+
+
+
     <header>
         <div class="start">
             <div class="container">
@@ -26,6 +45,7 @@
         <li><a class="navanchor" href="login.html">User Login</a></li>
         <li><a class="navanchor" href="#">About Us</a></li>
         <li><a class="navanchor" href="contactus.html">Contact Us</a></li>
+        <li><a class="navanchor" href="complex-search.html">Complex Search</a></li>
         </ul>
     </div>
     </nav>
@@ -39,24 +59,31 @@
                 <center><h2 style="color:rgb(92, 88, 86);">Search Your Query</h2></center>
         <label for="field"></label>
         <select class="hsearch" name="field"  id="field1">
-            <option value="none" selected>Choose your field</option>
-            <option value="cardio">Cardiology</option>
-            <option value="neuro">Neuorolgy</option>
-            <option value="dent">Dentist</option>
-            <option value="derma">Dermatology</option>
+            <option value="choose" selected>Choose Field</option>
+            <option value="dental">Dental</option>
+            <option value="general">General</option>
+            <option value="orthopedics">Orthopedics</option>
+            <option value="onchrology">Onchrology</option>
+            <option value="dermatology">Dermatology</option>
+            <option value="pediatrics">Pediatrics</option>
             
         </select>
         <label for="city"></label>
         <select class="hsearch" name="city"  id="field2">
-            <option value="none">Choose your city</option>
-            <option value="chennai">Chennai</option>
-            <option value="varanasi">Varanasi</option>
-            <option value="kanpur">Kanpur</option>
-            <option value="pune">Pune</option>
+            <option value="choose" selected>Choose city</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Varanasi">Varanasi</option>
+            <option value="Kanpur">Kanpur</option>
+            <option value="Mughal Sarai">Mughal Sarai</option>
         </select>
         <label for="fees"></label>
-        <input class="hsearch" type="number" name="fees" id="field2" placeholder="Enter Your Fees">
-        <a class="btn-blue" href="#">Search</a>
+        <input class="hsearch" type="number" name="fees" id="field3" placeholder="Enter Your Fees">
+        <a class="btn-blue" href="#" onclick="redirect()">Search</a>
+        <button style="display: block; margin-bottom: 50px; margin-left: 20px; height: 30px; background-color:black; color: cornsilk;" onclick="getloc()">Track Location</button>
+        <p id="mapop" style="color: black;">
+            </p>
         <!--<button class="hsearch" name="search" onclick="registration.html"> Search</button>-->
     </div>
 
@@ -65,6 +92,36 @@
             <h1>©Copyright Indian Penal Code</h1>
         </footer>
     </div>
-    
+    <script>
+        function getloc(){
+            if (navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showpos);
+
+            }
+            else{
+                alert("Not supporting");
+            }
+        }
+        function showpos(location){
+            var op=document.getElementById("mapop");
+           // op.innerHTML="Latitude:-  "+location.coords.latitude
+          //+"Longitude:-  "+location.coords.longitude;
+          var lat=location.coords.latitude;
+          var lon=location.coords.longitude;
+
+         var locapi= "https://api.opencagedata.com/geocode/v1/json?q="+lat+","+lon+"&key=a092a2b906ec4ab98af8f3dd3a4db9e5";
+
+        //avneesh home location
+        $.get({
+            url : locapi,
+            success:function(data){
+                console.log(data);
+             var city=data.results[0].components.city;
+             var inse=document.getElementById("field2");
+             inse.value=city;
+
+            }
+        });}
+        </script>
 </body>
 </html>

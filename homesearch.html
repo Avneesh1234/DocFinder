@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="desg.css">
+    <style>
+          #result{
+              margin-top: 40px;
+            background-color: rgba(109, 96, 138, 0.959);
+          padding: 20px;
+        }
+        .op{
+           /* background-color: rgb(181, 228, 94);
+            color: black;
+            border: rgb(159, 67, 182) 2px dotted;
+            border-radius: 10px;*/
+            display: inline;
+            color: whitesmoke;
+            margin-left:70px;
+            font-size: 1em;
+         
+        }
+    </style>
+</head>
+<body style="background-image: url(homese.jpg); background-size: cover;"> 
+    <header>
+        <div class="start">
+            <div class="container">
+            <h1>Doc Easy</h1>
+            </div>
+        </div>
+    </header>
+    
+
+    
+        
+            <nav class="navi">
+                <div class="container">
+        <ul>
+            <li><a class="navanchor" href="home.html">Home</a></li>
+        <li><a class="navanchor" href="registration.html">Registration</a></li>
+        <li><a class="navanchor" href="login.html">User Login</a></li>
+        <li><a class="navanchor" href="#">About Us</a></li>
+        <li><a class="navanchor" href="contactus.html">Contact Us</a></li>
+        <li><a class="navanchor" href="complex-search.html">Complex Search</a></li>
+        </ul>
+    </div>
+    </nav>
+    <h1>Results</h1>
+    <div  id="result">
+        <h2 style="display: inline; margin-left: 20px;">Doc-id</h2>
+        <h2 style="display: inline; margin-left: 20px; ">Doc-name</h2>
+        <h2 style="display: inline; margin-left: 20px; ">Doc-Field</h2>
+        <h2 style="display: inline; margin-left: 20px;">Doc-city</h2>
+        <h2 style="display: inline; margin-left: 20px;">Doc-Fees</h2>
+        <p id="npmq" style="color: black;"></p>
+      <!--  <span id="docid" style="margin-left: 35px;"></span>
+        <span id="dname" style="margin-left: 55px;"></span>
+        <span id="dfield" style="margin-left: 89px;"></span>
+        <span id="dcity" style="margin-left: 80px;"></span>
+        <span id="fees" style="margin-left: 59px;"></span>
+      -->
+
+
+
+    </div>
+    <div id="reult1">
+
+    </div>
+
+
+    <script>
+        //    alert("b1");
+            var city=localStorage.getItem("city");
+            var field=localStorage.getItem("field");
+            var fee=localStorage.getItem("fee");
+      //      alert("b2");
+            dlist=[
+    {docid:11, name:"AK Tiwari", city:"Mumbai", field:"dental",fee:1000},
+    {docid:41, name:"Farhan Sheikh", city:"Mumbai", field:"dental",fee:2200},
+    {docid:12, name:"R Yadav", city:"Mumbai", field:"general",fee:2000},
+    {docid:13, name:"AK Tiwari", city:"Mumbai", field:"orthopedics",fee:1500},
+    {docid:14, name:"VN Shah", city:"Mumbai", field:"onchrology",fee:2500},
+    {docid:15, name:"Rajkumar Rai", city:"Mumbai", field:"dematology",fee:800},
+    {docid:16, name:"J dubey", city:"Mumbai", field:"pediatrics",fee:1900},
+    
+    {docid:17, name:"John Tiwari", city:"Pune", field:"dental",fee:1000},
+    {docid:18, name:"P Yadav", city:"Pune", field:"general",fee:1200},
+    {docid:19, name:"AK Mittal", city:"Pune", field:"orthopedics",fee:2200},
+    {docid:20, name:"Birendra Shah", city:"Pune", field:"onchrology",fee:1000},
+    {docid:21, name:"Lakshmi Rai", city:"Pune", field:"dematology",fee:2000},
+    {docid:22, name:"J Malhotra", city:"Pune", field:"pediatrics",fee:2200},
+    
+    {docid:23, name:"Derek Tiwari", city:"Chennai", field:"dental",fee:2500},
+    {docid:24, name:"P Singh", city:"Chennai", field:"general",fee:1600},
+    {docid:25, name:"Monk Mittal", city:"Chennai", field:"orthopedics",fee:1900},
+    {docid:26, name:"VD Shah", city:"Chennai", field:"onchrology",fee:2000},
+    {docid:27, name:"Lakshmi Das", city:"Chennai", field:"dematology",fee:2300},
+    {docid:28, name:"CV Malhotra", city:"Chennai", field:"pediatrics",fee:2800},
+    
+    {docid:29, name:"Harry Jadhav", city:"Varanasi", field:"dental",fee:1200},
+    {docid:30, name:"K Singhal", city:"Varanasi", field:"general",fee:1800},
+    {docid:31, name:"Monkey Mishra", city:"Varanasi", field:"orthopedics",fee:2000},
+    {docid:32, name:"C Lal", city:"Varanasi", field:"onchrology",fee:2200},
+    {docid:33, name:"Babu Das", city:"Varanasi", field:"dematology",fee:1900},
+    {docid:34, name:"AK Jotra", city:"Varanasi", field:"pediatrics",fee:2000},
+    
+    
+    {docid:35, name:"Sandy Samson", city:"Kanpur", field:"dental",fee:1700},
+    {docid:36, name:"Liitle Singham", city:"Kanpur", field:"general",fee:1800},
+    {docid:37, name:"James Johnson", city:"Kanpur", field:"orthopedics",fee:2200},
+    {docid:38, name:"Vk Tiwary", city:"Kanpur", field:"onchrology",fee:2400},
+    {docid:39, name:"Babu Lal", city:"Kanpur", field:"dematology",fee:2800},
+    {docid:40, name:"CV Raman", city:"Kanpur", field:"pediatrics",fee:1900},
+
+    {docid:42, name:"Monkey Prasad", city:"Mughal Sarai", field:"pediatrics",fee:2900},
+    
+    
+    ]  ;
+    //alert("b3");
+    selects=[];
+        for(c=0;c<dlist.length;c++){
+    
+    if (city==dlist[c].city && field==dlist[c].field && fee>=dlist[c].fee)
+    {  //alert("b4");
+        selects.push(c);
+       
+    } 
+    }
+    var k;
+        for(k=0;k<selects.length;k++){
+            var q1=document.createElement('p');
+            var q2=document.createElement('p');
+            var q3=document.createElement('p');
+            var q4=document.createElement('p');
+            var q5=document.createElement('p');
+            var q6=document.createElement('p');
+           q1.classList.add("op");
+           q2.classList.add("op");
+           q3.classList.add("op");
+           q4.classList.add("op");
+           q5.classList.add("op");
+           //alert("bp");
+         //   alert(`<b>DocId</b>  =${dlist[selects[k]].docid}      <b>Name</b>  =${dlist[selects[k]].name}       <b>Field</b>  =${dlist[selects[k]].field}     <b>City</b>   =${dlist[selects[k]].city}        <b>Fee</b>    =${dlist[selects[k]].fee}`);
+           // qw.innerHTML=`<b>DocId</b>  =${dlist[selects[k]].docid}      <b>Name</b>  =${dlist[selects[k]].name}       <b>Field</b>  =${dlist[selects[k]].field}     <b>City</b>   =${dlist[selects[k]].city}        <b>Fee</b>    =${dlist[selects[k]].fee}`;
+            // var m=document.getElementById("docid");
+            // var n=document.getElementById("dname");
+            // var o=document.getElementById("dfield");
+            // var q=document.getElementById("dcity");
+            // var p=document.getElementById("dfees");
+            
+            q1.innerHTML = dlist[selects[k]].docid;
+            q2.innerHTML = dlist[selects[k]].name;
+            q3.innerHTML = dlist[selects[k]].field;
+            q4.innerHTML = dlist[selects[k]].city;
+            q5.innerHTML = dlist[selects[k]].fee;
+            //alert("bpm");
+            document.getElementById('result').appendChild(q1);
+           // alert("bpm1");
+            document.getElementById('result').appendChild(q2);
+            document.getElementById('result').appendChild(q3);
+            document.getElementById('result').appendChild(q4);
+            document.getElementById('result').appendChild(q5);
+            document.getElementById('result').appendChild(q6);
+         // alert("bp1");
+    
+        }
+    
+        if (selects.length==0){
+         
+            var posit=document.getElementById("npmq");
+            posit.innerHTML="No Doctors Found";
+            
+        }
+    
+    
+    
+    
+    
+        </script>
+</body>
+</html>
