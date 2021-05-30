@@ -8,6 +8,69 @@
     <link rel="stylesheet" type="text/css" href="desg.css">
 </head>
 <body>
+    <script>
+
+        function checkemail(ele,message){
+
+            var x = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/; 
+            if (!(ele.match(x))){
+                alert(message);
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+        function checklength(ele,leng,message){
+            if (ele.length<leng){
+                alert(message);
+                return false;
+            }
+            else{
+                return true;
+            }
+            
+        }
+        
+        function checkform(){
+             
+              
+               var mail=document.getElementById("mail").value;
+               
+               var pass=document.getElementById("password").value;
+              
+
+                
+                     if (checkemail(mail,"Enter correct email id")){
+                         if (checklength(pass,8,"Password should be min 8 charachters long")){
+                            
+
+                                        return true;
+
+                                     }
+                                 
+                             
+                         
+                     }   
+
+                 
+
+                 else{
+                     return false;
+                 }
+
+             }
+
+
+
+
+
+
+
+    </script>
+
+
     <header>
         <div class="start">
             <div class="container">

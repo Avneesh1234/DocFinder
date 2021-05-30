@@ -103,7 +103,7 @@
             }
         }
         function showpos(location){
-            var op=document.getElementById("mapop");
+           // var op=document.getElementById("mapop");
            // op.innerHTML="Latitude:-  "+location.coords.latitude
           //+"Longitude:-  "+location.coords.longitude;
           var lat=location.coords.latitude;
@@ -111,7 +111,6 @@
 
          var locapi= "https://api.opencagedata.com/geocode/v1/json?q="+lat+","+lon+"&key=a092a2b906ec4ab98af8f3dd3a4db9e5";
 
-        //avneesh home location
         $.get({
             url : locapi,
             success:function(data){
